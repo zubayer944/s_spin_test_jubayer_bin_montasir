@@ -3,16 +3,15 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 class CustomTextFromField {
-  Widget textFromField({
-    String? titleText,
-    required String? hintTile,
-    String? Function(String?)? validator,
-    TextInputType? keyboardType,
-    String?mandatorySign,
-    void Function()? onTap,
-    void Function(String)? onChanged,
-    TextEditingController?controller
-  }) {
+  Widget textFromField(
+      {String? titleText,
+      required String? hintTile,
+      String? Function(String?)? validator,
+      TextInputType? keyboardType,
+      String? mandatorySign,
+      void Function()? onTap,
+      void Function(String)? onChanged,
+      TextEditingController? controller}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -38,32 +37,20 @@ class CustomTextFromField {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: TextFormField(
             onChanged: onChanged,
-            controller:controller ,
+            controller: controller,
             onTap: onTap,
             validator: validator,
-            autovalidateMode: AutovalidateMode.always,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             keyboardType: keyboardType,
             maxLines: null,
-            // textAlignVertical: TextAlignVertical.bottom,
             textAlign: TextAlign.start,
             decoration: InputDecoration(
               hintText: hintTile.toString(),
               hintStyle: const TextStyle(fontSize: 18),
-              // enabledBorder: const UnderlineInputBorder(
-              //   borderSide: BorderSide(color: lightGreyTextColor),
-              // ),
-              border: const OutlineInputBorder(
-                  // borderRadius:  BorderRadius.circular(25.0),
-                  // borderSide:  BorderSide(),
-                  ),
+              border: const OutlineInputBorder(),
               focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: blueBtnBackgroundColor),
-                // borderRadius:  BorderRadius.circular(25.0),
-                // borderSide:  BorderSide(),
               ),
-              // const UnderlineInputBorder(
-              //   borderSide: BorderSide(color: blueBtnBackgroundColor),
-              // ),
             ),
           ),
         ),

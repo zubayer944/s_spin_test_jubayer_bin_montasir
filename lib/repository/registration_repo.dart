@@ -8,7 +8,7 @@ class RegistrationRepo {
     "Content-Type": "application/json",
   };
   Future<bool> registrationPost(
-      {required Map<String,dynamic> registrationData}) async {
+      {required Map<String, dynamic> registrationData}) async {
     try {
       Uri url = Uri.parse(AppUrl.otpSendUrl);
       print('RegistrationRepo.registrationPost url : ' +

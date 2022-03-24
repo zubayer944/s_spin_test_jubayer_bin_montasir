@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../common_widgets/colors.dart';
 import '../common_widgets/custom_elevated_button.dart';
@@ -14,36 +15,36 @@ class WelcomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             welcomeTxt(),
-            const SizedBox(
-              height: 24,
+            SizedBox(
+              height: 24.h,
             ),
             Image.asset("assets/images/solution_logo_n.png"),
-            const SizedBox(
-              height: 49,
+            SizedBox(
+              height: 49.h,
             ),
             loginAndSignUpBtn(),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: 40.h,
             ),
             Text(
               "Or via social media",
               textAlign: TextAlign.center,
               style: CustomFontStyle.notoSans(
-                fontSize: 20,
+                fontSize: 18.h,
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const SizedBox(
-              height: 25,
+            SizedBox(
+              height: 25.h,
             ),
             socialMediaBtn(),
-            const SizedBox(
-              height: 75,
+            SizedBox(
+              height: 75.h,
             )
           ],
         ),
@@ -56,7 +57,7 @@ class WelcomeView extends StatelessWidget {
       child: Text(
         "Welcome",
         style: CustomFontStyle.notoSans(
-          fontSize: 24,
+          fontSize: 24.h,
           fontWeight: FontWeight.w600,
         ),
       ),
@@ -68,30 +69,30 @@ class WelcomeView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CustomElevatedButton.customElevatedButton(
-          height: 48,
-          width: 140,
+          height: 48.h,
+          width: 120.w,
           fontColors: backgroundColor,
           onTap: () {
             Get.to(LogInView());
           },
           btnName: "LogIn",
-          fontSize: 18,
+          fontSize: 18.h,
           backgroundColor: blueBtnBackgroundColor,
           fontWeight: FontWeight.w500,
         ),
-        const SizedBox(
-          width: 16,
+        SizedBox(
+          width: 16.w,
         ),
         CustomElevatedButton.customElevatedButton(
-          height: 48,
-          width: 140,
+          height: 48.h,
+          width: 120.w,
           backgroundColor: yellowBtnBackgroundColor,
           fontColors: backgroundColor,
           onTap: () {
             Get.to(RegistrationView());
           },
           btnName: "SignUp",
-          fontSize: 18,
+          fontSize: 18.h,
           fontWeight: FontWeight.w500,
         )
       ],
@@ -105,8 +106,8 @@ class WelcomeView extends StatelessWidget {
         InkWell(
           onTap: () {},
           child: Container(
-            height: 40,
-            width: 40,
+            height: 40.h,
+            width: 40.w,
             decoration: BoxDecoration(
                 color: Colors.blue,
                 shape: BoxShape.circle,
@@ -119,14 +120,14 @@ class WelcomeView extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(
-          width: 24,
+        SizedBox(
+          width: 24.w,
         ),
         InkWell(
           onTap: () {},
           child: Container(
-            height: 40,
-            width: 40,
+            height: 40.h,
+            width: 40.w,
             decoration: BoxDecoration(
                 color: Colors.red,
                 shape: BoxShape.circle,
