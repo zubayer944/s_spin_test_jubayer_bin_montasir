@@ -69,7 +69,18 @@ class LogInView extends StatelessWidget {
                   mandatorySign: "*",
                   keyboardType: TextInputType.text,
                   validator: (value) {
-                    return value!.isEmpty ? "Password is required" : null;
+                    if (value!.isEmpty) {
+                      return "Password is required";
+                    } else if (!value.contains(RegExp(r"[a-z]")) &&
+                        !value.contains(RegExp(r"[A-Z]"))) {
+                      return "At least 1 character need";
+                    } else if (!value.contains(RegExp("[0-9]"))) {
+                      return "At least 1 digit need";
+                    } else if (value.length >= 8) {
+                      return null;
+                    } else {
+                      return "Password must contain minimum 8 characters!";
+                    }
                   },
                 ),
                 const SizedBox(

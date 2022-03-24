@@ -22,12 +22,12 @@ class LogInController extends GetxController {
             message: 'Login has been successfully',
             backgroundColor: Colors.green,
           );
-          Get.to(WelcomeView());
+          Get.to(const WelcomeView());
           // Get.to(OtpVerification());
         } else {
           Get.rawSnackbar(
-            title: 'Error',
-            message: 'Login failed',
+            title: 'Login failed!',
+            message: 'Invalid Email or password',
             backgroundColor: Colors.red,
           );
         }
