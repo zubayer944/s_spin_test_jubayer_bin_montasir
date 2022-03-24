@@ -14,39 +14,42 @@ class WelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            welcomeTxt(),
-            SizedBox(
-              height: 24.h,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                welcomeTxt(),
+                SizedBox(
+                  height: 24.h,
+                ),
+                Image.asset("assets/images/solution_logo_n.png"),
+                SizedBox(
+                  height: 49.h,
+                ),
+                loginAndSignUpBtn(),
+                SizedBox(
+                  height: 40.h,
+                ),
+                Text(
+                  "Or via social media",
+                  textAlign: TextAlign.center,
+                  style: CustomFontStyle.notoSans(
+                    fontSize: 18.h,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(
+                  height: 25.h,
+                ),
+                socialMediaBtn(),
+                SizedBox(
+                  height: 75.h,
+                )
+              ],
             ),
-            Image.asset("assets/images/solution_logo_n.png"),
-            SizedBox(
-              height: 49.h,
-            ),
-            loginAndSignUpBtn(),
-            SizedBox(
-              height: 40.h,
-            ),
-            Text(
-              "Or via social media",
-              textAlign: TextAlign.center,
-              style: CustomFontStyle.notoSans(
-                fontSize: 18.h,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            SizedBox(
-              height: 25.h,
-            ),
-            socialMediaBtn(),
-            SizedBox(
-              height: 75.h,
-            )
-          ],
+          ),
         ),
       ),
     );
@@ -69,30 +72,30 @@ class WelcomeView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CustomElevatedButton.customElevatedButton(
-          height: 48.h,
-          width: 120.w,
+          height: 48,
+          width: 120,
           fontColors: backgroundColor,
           onTap: () {
-            Get.to(LogInView());
+            Get.to(() => LogInView());
           },
           btnName: "LogIn",
           fontSize: 18.h,
           backgroundColor: blueBtnBackgroundColor,
           fontWeight: FontWeight.w500,
         ),
-        SizedBox(
-          width: 16.w,
+        const SizedBox(
+          width: 16,
         ),
         CustomElevatedButton.customElevatedButton(
-          height: 48.h,
-          width: 120.w,
+          height: 48,
+          width: 120,
           backgroundColor: yellowBtnBackgroundColor,
           fontColors: backgroundColor,
           onTap: () {
-            Get.to(RegistrationView());
+            Get.to(() => RegistrationView());
           },
           btnName: "SignUp",
-          fontSize: 18.h,
+          fontSize: 18,
           fontWeight: FontWeight.w500,
         )
       ],

@@ -20,7 +20,7 @@ class LogInView extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 18.0.w),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
           child: Form(
             key: _formKey,
             child: Column(
@@ -118,9 +118,9 @@ class LogInView extends StatelessWidget {
       },
       btnName: "LogIn",
       fontColors: backgroundColor,
-      width: 120.w,
-      height: 45.h,
-      fontSize: 18.h,
+      width: 120,
+      height: 45,
+      fontSize: 18,
       fontWeight: FontWeight.w700,
       backgroundColor: logInBtnColor,
     );

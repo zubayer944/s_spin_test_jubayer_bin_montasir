@@ -22,6 +22,7 @@ class LogInController extends GetxController {
       );
 
       LoginRepo().loginRepoPost(logInData: logInDataMap).then((bool value) {
+        Get.back();
         if (value == true) {
           Get.rawSnackbar(
             title: 'Success',

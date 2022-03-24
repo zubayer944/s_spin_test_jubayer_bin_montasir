@@ -17,7 +17,7 @@ class OtpVerificationController extends GetxController {
       {required Map<String, dynamic> registrationDataMap}) async {
     try {
       Get.dialog(
-         const SpinKitThreeBounce(
+        const SpinKitThreeBounce(
           color: blueBtnBackgroundColor,
           size: 40,
         ),
@@ -25,15 +25,14 @@ class OtpVerificationController extends GetxController {
       OtpVerificationRepo()
           .otpVerificationPostRepo(registrationData: registrationDataMap)
           .then((bool value) {
+        Get.back();
         if (value == true) {
-
           Get.rawSnackbar(
             title: 'Success',
             message: 'Verification has been successfully',
             backgroundColor: Colors.green,
           );
           Get.to(LogInView());
-
         } else {
           Get.rawSnackbar(
             title: 'Error',
